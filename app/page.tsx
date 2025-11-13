@@ -5,6 +5,7 @@ import { Paperclip, Send } from "lucide-react";
 import { FeatureButton } from "@/components/feature-button";
 import Image from "next/image";
 import { useChat } from "@ai-sdk/react";
+import AiChat from "@/components/ai-chat";
 
 export default function Home() {
   const [input, setInput] = useState("");
@@ -45,7 +46,7 @@ export default function Home() {
   console.log(messages);
 
   return (
-    <div className="flex flex-col items-center justify-end min-h-[95vh] w-full bg-transparent py-6 max-w-5xl mx-auto">
+    <div className="flex flex-col items-center justify-end h-[90vh]  w-full bg-transparent py-6 max-w-5xl mx-auto">
       {active === "talk" ? (
         <div className="flex items-center justify-center w-xs md:w-6xl max-w-7xl ">
           <h1 className="text-3xl md:text-6xl text-white text-center font-bold w-full">
@@ -53,7 +54,7 @@ export default function Home() {
           </h1>
         </div>
       ) : (
-        <div className="flex items-center justify-center mb-72 w-xs md:w-6xl max-w-7xl">
+        <div className="flex items-center justify-center w-xs md:w-6xl max-w-7xl">
           <h1 className="text-3xl md:text-6xl text-red-white text-center font-bold">
             What can I help you with?
           </h1>
@@ -93,7 +94,7 @@ export default function Home() {
       ))}
 
       {/* Input area */}
-      <div className="flex items-center justify-center w-full pb-5 px-5 lg:mx-20 bg-transparent">
+      {/* <div className="flex items-center justify-center w-full pb-5 px-5 lg:mx-20 bg-transparent">
         <form
           className="w-full flex justify-center items-center"
           onSubmit={handleSumit}
@@ -125,7 +126,14 @@ export default function Home() {
             </button>
           </div>
         </form>
-      </div>
+      </div> */}
+
+{/* ********************** */}
+<AiChat/>
+{/* ********************** */}
+
+
+
 
       {/* Feature buttons */}
       <div className="flex w-full justify-center items-center gap-2">
